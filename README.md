@@ -1,37 +1,73 @@
-# Foobar
+# 📊 Projet d’Investissement Automatisé en Machine Learning
 
-Foobar is a Python library for dealing with word pluralization.
+Ce projet a pour objectif de développer un algorithme de **décision d’investissement** automatisée basé sur une combinaison de trois analyses complémentaires : **analyse technique**, **analyse sentimentale sur les réseaux sociaux**, et **analyse sentimentale issue de l’actualité économique**.  
+Le tout est développé en **Python**, en s'appuyant sur des bibliothèques spécialisées en finance, traitement du langage naturel (NLP) et machine learning.
 
-## Installation
+---
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+## 🔍 Objectifs
 
-```bash
-pip install foobar
-```
+- Fournir une **note agrégée** de confiance sur une entreprise cotée en bourse.
+- Prendre une **décision d’achat ou de vente** à partir de données financières et sentimentales.
+- Intégrer plusieurs **sources de données hétérogènes** pour un jugement plus robuste.
 
-## Usage
+---
 
-```python
-import foobar
+## 🧠 Structure du projet
 
-# returns 'words'
-foobar.pluralize('word')
+Le projet est divisé en **trois modules principaux**, chacun relié à un dataset spécifique :
 
-# returns 'geese'
-foobar.pluralize('goose')
+### 1. `analyse_technique.py`
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+- Analyse les **cours historiques de l’action**.
+- Calcule des **indicateurs techniques** (Moyennes mobiles, RSI, MACD, etc.).
+- Fait des **prédictions de prix de clôture**.
+- Génère une **note technique** entre **0 et 5**.
 
-## Contributing
+### 2. `analyse_reseaux.py`
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+- Analyse les **sentiments exprimés sur les réseaux sociaux** (X, LinkedIn...).
+- Utilise des techniques de **scraping** et de **NLP**.
+- Donne une **note sentimentale** en fonction de la tonalité générale des discussions.
+- ⚠️ **Problème connu** : Certains sites mettent en place des protections anti-scraping, nécessitant une adaptation (via proxies, API officielles ou IA générative).
 
-Please make sure to update tests as appropriate.
+### 3. `analyse_actualite.py`
 
-## License
+- Analyse les **sentiments dans les articles de presse économique** (Les Echos, Le Monde, etc.).
+- Extraction du ton global des titres et contenus via NLP.
+- Fournit une **note de confiance média**.
+- ⚠️ **Problème connu** : Accès restreint aux contenus, des solutions alternatives sont à l’étude (API, RSS, agrégateurs, scraping contourné).
 
-[MIT](https://choosealicense.com/licenses/mit/)
+---
+
+## ✅ Étape suivante
+
+Un quatrième module `decision_investissement.py` combinera les trois notes pour :
+
+- Évaluer le **niveau de confiance global**.
+- Déterminer une **action recommandée** : acheter, conserver, ou vendre.
+
+---
+
+## 🔧 Technologies utilisées
+
+- **Langage** : Python 3.10+
+- **Librairies principales** : `pandas`, `numpy`, `scikit-learn`, `yfinance`, `BeautifulSoup`, `requests`, `transformers`, `nltk`, etc.
+- **Approches ML/NLP** : vectorisation, modèles pré-entraînés, classification de sentiment, régression de prix.
+
+---
+
+## 📌 Remarques
+
+Ce projet est en cours de développement. Certaines fonctionnalités (scraping avancé, API sociales et presse) peuvent nécessiter des contournements techniques ou un passage à des solutions payantes / semi-automatisées.
+
+---
+
+## 📫 Contact
+
+Pour toute question ou suggestion :  
+**Albane Oury** – co-développeur 
+📧 *aoury@albertschool.com*
+
+**Robin Levasseur** – co-développeur  
+📧 *rlevasseur@albertschool.com*
